@@ -16,12 +16,12 @@ class ResBank(models.Model):
     street2 = fields.Char('Complement', size=128)
     district = fields.Char('District', size=32)
     city_id = fields.Many2one(comodel_name='res.state.city',
-                              string=u'City',
+                              string=u'Cidade',
                               domain="[('state_id','=',state_id)]")
 
     country_id = fields.Many2one(comodel_name='res.country',
                                  related='country',
-                                 string=u'Country')
+                                 string=u'País')
     state_id = fields.Many2one(comodel_name='res.country.state',
                                related='state',
                                string='State')
